@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: newsdevpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: newsdevpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: newsdevpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: newsdevpipelinesjavascriptdocker 
+          image: crmyapp360.azurecr.io/newsdevpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
